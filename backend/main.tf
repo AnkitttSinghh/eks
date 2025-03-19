@@ -28,7 +28,7 @@ resource "aws_dynamodb_table" "example" {
 
   # Define the attribute schema for the table
   attribute {
-    name = "id"                               # The name of the primary key attribute
+    name = "Lock_ID"                               # The name of the primary key attribute
     type = "S"                                # The data type: "S" (string), "N" (number), or "B" (binary)
   }
 
