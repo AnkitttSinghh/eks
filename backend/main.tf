@@ -2,7 +2,7 @@
 # Specifies the AWS region and locks the provider version to 5.x
 provider "aws" {
   version = "~> 5.0"
-  region  = "us-west-2"
+  region  = "ap-south-1"
 }
 
 # Creates an S3 bucket for storing Terraform state
