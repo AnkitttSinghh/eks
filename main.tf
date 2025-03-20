@@ -9,7 +9,7 @@ terraform {
   backend "s3" {
     bucket         = "demo-terraform-eks-state-bucket-ankit"
     key            = "terraform.tfstate"
-    region         = "us-west-2"
+    region         = "ap-south-1"
     dynamodb_table = "ankit-terraform-eks-state-lock"
     encrypt        = true
   }
