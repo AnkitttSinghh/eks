@@ -13,7 +13,7 @@ provider "aws" {
 #   or 'create_before_destroy' to ensure replacements are handled safely
 
 resource "aws_s3_bucket" "example" {
-  bucket = "demo-terraform-eks-state-bucket-ankit"
+  bucket = "demo-terraform-eks-state-bucket-anky"
 
   lifecycle {
     prevent_destroy = false
