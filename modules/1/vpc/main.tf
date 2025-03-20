@@ -16,7 +16,7 @@ resource "aws_subnet" "private" {                              # Defines an AWS 
                                                                 #Required for scalability.
   vpc_id            = aws_vpc.main.id                           # Associates the subnet with the specified VPC. Required to ensure the subnet exists within the desired VPC.
   cidr_block        = var.private_subnet_cidrs[count.index]     # Assigns a CIDR block to each subnet from the list 'var.private_subnet_cidrs', using 'count.index' to select 
-                                                                the current subnet. Required to specify IP ranges for the subnets.
+                                                                #the current subnet. Required to specify IP ranges for the subnets.
   availability_zone = var.availability_zones[count.index]       # Assigns each subnet to a specific availability zone using the corresponding 'count.index'. Significant for high availability and fault tolerance.
 
   tags = {                                                      # Tags are metadata added to resources for easy identification and management. Not strictly required but highly recommended.
