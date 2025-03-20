@@ -12,8 +12,8 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "private" {                              # Defines an AWS subnet resource named "private". Required for creating subnets in a VPC.
   count             = length(var.private_subnet_cidrs)         # Dynamically determines the number of subnets to create, based on 
-                                                                the length of the CIDR blocks provided in 'var.private_subnet_cidrs'. 
-                                                                Required for scalability.
+                                                                #the length of the CIDR blocks provided in 'var.private_subnet_cidrs'. 
+                                                                #Required for scalability.
   vpc_id            = aws_vpc.main.id                           # Associates the subnet with the specified VPC. Required to ensure the subnet exists within the desired VPC.
   cidr_block        = var.private_subnet_cidrs[count.index]     # Assigns a CIDR block to each subnet from the list 'var.private_subnet_cidrs', using 'count.index' to select 
                                                                 the current subnet. Required to specify IP ranges for the subnets.
@@ -32,7 +32,7 @@ resource "aws_subnet" "public" {
   availability_zone = var.availability_zones[count.index]
 
   map_public_ip_on_launch = true                                # Enables automatic assignment of public IP addresses to instances launched in this subnet. 
-                                                                Required for making resources accessible from the internet.
+                                                                #Required for making resources accessible from the internet.
 
   tags = {
     Name                                           = "${var.cluster_name}-public-${count.index + 1}"
